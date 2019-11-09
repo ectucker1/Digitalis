@@ -31,7 +31,6 @@ material/0 = null
 script = ExtResource( 2 )
 
 [node name="Thumb" type="MeshInstance" parent="."]
-editor/display_folded = true
 transform = Transform( 0.946029, 0, -0.324081, 0, 1, 0, 0.324081, 0, 0.946029, -0.0993336, 0, 0 )
 mesh = SubResource( 2 )
 material/0 = null
@@ -67,6 +66,7 @@ mesh = SubResource( 3 )
 material/0 = null
 
 [node name="Index" type="MeshInstance" parent="."]
+editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0536953, 0, -0.000880256 )
 mesh = SubResource( 2 )
 material/0 = null
