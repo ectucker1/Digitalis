@@ -38,7 +38,6 @@ margin_right = 4.0
 margin_bottom = 560.0
 
 [node name="X Slider" type="HSlider" parent="GUI/HBoxContainer"]
-editor/display_folded = true
 margin_left = 8.0
 margin_right = 71.0
 margin_bottom = 16.0
@@ -124,9 +123,9 @@ script = ExtResource( 2 )
 
 [node name="frameRate" type="Label" parent="GUI"]
 margin_left = 20.0
-margin_top = 293.0
+margin_top = 315.0
 margin_right = 225.0
-margin_bottom = 307.0
+margin_bottom = 329.0
 valign = 1
 autowrap = true
 uppercase = true
