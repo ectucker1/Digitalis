@@ -1,0 +1,252 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://addons/gdleapmotion/scenes/center_ball_material.tres" type="Material" id=1]
+[ext_resource path="res://addons/gdleapmotion/scenes/hand.gd" type="Script" id=2]
+[ext_resource path="res://addons/gdleapmotion/scenes/left_hand_material.tres" type="Material" id=3]
+[ext_resource path="res://addons/gdleapmotion/scenes/bone_material.tres" type="Material" id=4]
+
+[sub_resource type="SphereMesh" id=1]
+material = ExtResource( 1 )
+radius = 0.015
+height = 0.03
+radial_segments = 32
+rings = 16
+
+[sub_resource type="SphereMesh" id=2]
+material = ExtResource( 3 )
+radius = 0.01
+height = 0.02
+radial_segments = 32
+rings = 16
+
+[sub_resource type="CylinderMesh" id=3]
+material = ExtResource( 4 )
+top_radius = 0.005
+bottom_radius = 0.005
+height = 1.0
+
+[node name="Left_hand" type="MeshInstance"]
+mesh = SubResource( 1 )
+material/0 = null
+script = ExtResource( 2 )
+
+[node name="Thumb" type="MeshInstance" parent="."]
+transform = Transform( 0.946029, 0, -0.324081, 0, 1, 0, 0.324081, 0, 0.946029, -0.0993336, 0, 0 )
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="Thumb_Proximal" type="MeshInstance" parent="Thumb"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.05 )
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="Thumb_Intermediate" type="MeshInstance" parent="Thumb/Thumb_Proximal"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.05 )
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="Thumb_Distal" type="MeshInstance" parent="Thumb/Thumb_Proximal/Thumb_Intermediate"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.05 )
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="Thumb_Distal_Bone" type="MeshInstance" parent="Thumb/Thumb_Proximal/Thumb_Intermediate"]
+transform = Transform( 1, 0, 0, 0, -1.09278e-009, -1, 0, 0.025, -4.37114e-008, 0, 0, 0.025 )
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="Thumb_Intermediate_Bone" type="MeshInstance" parent="Thumb/Thumb_Proximal"]
+transform = Transform( 1, 0, 0, 0, -1.09278e-009, -1, 0, 0.025, -4.37114e-008, 0, 0, 0.025 )
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="Thumb_Proximal_Bone" type="MeshInstance" parent="Thumb"]
+transform = Transform( 1, 0, 0, 0, -1.09278e-009, -1, 0, 0.025, -4.37114e-008, 0, 0, 0.025 )
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="Index" type="MeshInstance" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0536953, 0, -0.000880256 )
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="Index_Metacarpal" type="MeshInstance" parent="Index"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.05 )
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="Index_Proximal" type="MeshInstance" parent="Index/Index_Metacarpal"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.05 )
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="Index_Intermediate" type="MeshInstance" parent="Index/Index_Metacarpal/Index_Proximal"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.05 )
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="Index_Distal" type="MeshInstance" parent="Index/Index_Metacarpal/Index_Proximal/Index_Intermediate"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.05 )
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="Index_Distal_Bone" type="MeshInstance" parent="Index/Index_Metacarpal/Index_Proximal/Index_Intermediate"]
+transform = Transform( 1, 0, 0, 0, -1.09278e-009, -1, 0, 0.025, -4.37114e-008, 0, 0, 0.025 )
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="Index_Intermediate_Bone" type="MeshInstance" parent="Index/Index_Metacarpal/Index_Proximal"]
+transform = Transform( 1, 0, 0, 0, -1.09278e-009, -1, 0, 0.025, -4.37114e-008, 0, 0, 0.025 )
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="Index_Proximal_Bone" type="MeshInstance" parent="Index/Index_Metacarpal"]
+transform = Transform( 1, 0, 0, 0, -1.09278e-009, -1, 0, 0.025, -4.37114e-008, 0, 0, 0.025 )
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="Index_Metacarpal_Bone" type="MeshInstance" parent="Index"]
+transform = Transform( 1, 0, 0, 0, -1.09278e-009, -1, 0, 0.025, -4.37114e-008, 0, 0, 0.025 )
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="Middle" type="MeshInstance" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00493249, 0, -0.00230861 )
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="Middle_Metacarpal" type="MeshInstance" parent="Middle"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.05 )
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="Middle_Proximal" type="MeshInstance" parent="Middle/Middle_Metacarpal"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.05 )
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="Middle_Intermediate" type="MeshInstance" parent="Middle/Middle_Metacarpal/Middle_Proximal"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.05 )
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="Middle_Distal" type="MeshInstance" parent="Middle/Middle_Metacarpal/Middle_Proximal/Middle_Intermediate"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.05 )
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="Middle_Distal_Bone" type="MeshInstance" parent="Middle/Middle_Metacarpal/Middle_Proximal/Middle_Intermediate"]
+transform = Transform( 1, 0, 0, 0, -1.09278e-009, -1, 0, 0.025, -4.37114e-008, 0, 0, 0.025 )
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="Middle_Intermediate_Bone" type="MeshInstance" parent="Middle/Middle_Metacarpal/Middle_Proximal"]
+transform = Transform( 1, 0, 0, 0, -1.09278e-009, -1, 0, 0.025, -4.37114e-008, 0, 0, 0.025 )
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="Middle_Proximal_Bone" type="MeshInstance" parent="Middle/Middle_Metacarpal"]
+transform = Transform( 1, 0, 0, 0, -1.09278e-009, -1, 0, 0.025, -4.37114e-008, 0, 0, 0.025 )
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="Middle_Metacarpal_Bone" type="MeshInstance" parent="Middle"]
+transform = Transform( 1, 0, 0, 0, -1.09278e-009, -1, 0, 0.025, -4.37114e-008, 0, 0, 0.025 )
+visible = false
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="Ring" type="MeshInstance" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0349526, 0, 0.00053224 )
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="Ring_Metacarpal" type="MeshInstance" parent="Ring"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.05 )
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="Ring_Proximal" type="MeshInstance" parent="Ring/Ring_Metacarpal"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.05 )
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="Ring_Intermediate" type="MeshInstance" parent="Ring/Ring_Metacarpal/Ring_Proximal"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.05 )
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="Ring_Distal" type="MeshInstance" parent="Ring/Ring_Metacarpal/Ring_Proximal/Ring_Intermediate"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.05 )
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="Ring_Distal_Bone" type="MeshInstance" parent="Ring/Ring_Metacarpal/Ring_Proximal/Ring_Intermediate"]
+transform = Transform( 1, 0, 0, 0, -1.09278e-009, -1, 0, 0.025, -4.37114e-008, 0, 0, 0.025 )
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="Ring_Intermediate_Bone" type="MeshInstance" parent="Ring/Ring_Metacarpal/Ring_Proximal"]
+transform = Transform( 1, 0, 0, 0, -1.09278e-009, -1, 0, 0.025, -4.37114e-008, 0, 0, 0.025 )
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="Ring_Proximal_Bone" type="MeshInstance" parent="Ring/Ring_Metacarpal"]
+transform = Transform( 1, 0, 0, 0, -1.09278e-009, -1, 0, 0.025, -4.37114e-008, 0, 0, 0.025 )
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="Ring_Metacarpal_Bone" type="MeshInstance" parent="Ring"]
+transform = Transform( 1, 0, 0, 0, -1.09278e-009, -1, 0, 0.025, -4.37114e-008, 0, 0, 0.025 )
+visible = false
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="Pink" type="MeshInstance" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0695889, 0, 1.98185e-005 )
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="Pink_Metacarpal" type="MeshInstance" parent="Pink"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.05 )
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="Pink_Proximal" type="MeshInstance" parent="Pink/Pink_Metacarpal"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.05 )
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="Pink_Intermediate" type="MeshInstance" parent="Pink/Pink_Metacarpal/Pink_Proximal"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.05 )
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="Pink_Distal" type="MeshInstance" parent="Pink/Pink_Metacarpal/Pink_Proximal/Pink_Intermediate"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.05 )
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="Pink_Distal_Bone" type="MeshInstance" parent="Pink/Pink_Metacarpal/Pink_Proximal/Pink_Intermediate"]
+transform = Transform( 1, 0, 0, 0, -1.09278e-009, -1, 0, 0.025, -4.37114e-008, 0, 0, 0.025 )
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="Pink_Intermediate_Bone3" type="MeshInstance" parent="Pink/Pink_Metacarpal/Pink_Proximal"]
+transform = Transform( 1, 0, 0, 0, -1.09278e-009, -1, 0, 0.025, -4.37114e-008, 0, 0, 0.025 )
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="Pink_Proximal_Bone" type="MeshInstance" parent="Pink/Pink_Metacarpal"]
+transform = Transform( 1, 0, 0, 0, -1.09278e-009, -1, 0, 0.025, -4.37114e-008, 0, 0, 0.025 )
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="Pink_Metacarpal_Bone" type="MeshInstance" parent="Pink"]
+transform = Transform( 1, 0, 0, 0, -1.09278e-009, -1, 0, 0.025, -4.37114e-008, 0, 0, 0.025 )
+mesh = SubResource( 3 )
+material/0 = null
