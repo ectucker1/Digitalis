@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Core/Hands.gd" type="Script" id=1]
 [ext_resource path="res://addons/gdleapmotion/scenes/Leap_Motion.tscn" type="PackedScene" id=2]
@@ -7,13 +7,14 @@
 [ext_resource path="res://Core/Lightning.gd" type="Script" id=5]
 [ext_resource path="res://Core/Spells/Lightning.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Interface Root.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Resources/Sound Effects/Wind Chimes.ogg" type="AudioStream" id=8]
+[ext_resource path="res://Resources/Sound Effects/Electric Crackle.ogg" type="AudioStream" id=9]
 
 [node name="Spatial" type="Spatial"]
 
 [node name="Camera" type="Camera" parent="."]
 
 [node name="Hands" type="Spatial" parent="."]
-editor/display_folded = true
 script = ExtResource( 1 )
 
 [node name="Leap_Motion" parent="Hands" instance=ExtResource( 2 )]
@@ -34,3 +35,9 @@ script = ExtResource( 5 )
 [node name="Effect" parent="Lightning" instance=ExtResource( 6 )]
 
 [node name="GUI" parent="." instance=ExtResource( 7 )]
+
+[node name="Chimes" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+
+[node name="Crackle" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )

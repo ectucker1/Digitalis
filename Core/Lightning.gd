@@ -2,13 +2,14 @@ extends Spatial
 
 var console
 var hands
-
+var Crackle
 var lighting
 
 func _ready():
 	hands = get_parent().get_node("Hands")
 	console = get_parent().find_node("Peephole", true, false)
 	lighting = get_node("Effect")
+	Crackle = get_node(Crackle)
 
 func _pick_hands(choices):
 	var hands = []
@@ -44,3 +45,4 @@ func _process(delta):
 			lighting.look_at_from_position(transforms[0].origin, transforms[1].origin, Vector3(0, 1, 0))
 			lighting.scale = Vector3(scale, scale, scale)
 			lighting.show()
+			Crackle.play()
