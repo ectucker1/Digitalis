@@ -33,18 +33,14 @@ func _pick_hands(choices):
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	console.cleartext()
-	console.printline(str(hands.get_transforms("").size()))
 	var transforms = _pick_hands(hands.get_transforms(""))
-	if transforms.size() > 1:
-		var midpoint = (transforms[0].origin + transforms[1].origin) / 2
-		#var midpoint = transforms[0].origin
-		var scale = (transforms[0].origin - transforms[1].origin).length()
-		#lighting.global_transform.origin = midpoint
-		console.printline(str(scale))
-		lighting.look_at_from_position(transforms[0].origin, transforms[1].origin, Vector3(0, 1, 0))
-		#lighting.rotate_y(PI / 2)
-		lighting.scale = Vector3(scale, scale, scale)
-		lighting.show()
-	else:
-		lighting.hide()
+	lighting.hide()
+	if transforms.size() == 2:
+		var dir1 = transforms[0].basis.z 
+		var dir2 = transforms[1].basis.z
+		var angle = acos(dir1.dot(dir2) / dir1.length() / dir2.length())
+		if angle > 0.4:
+			var scale = (transforms[0].origin - transforms[1].origin).length()
+			lighting.look_at_from_position(transforms[0].origin, transforms[1].origin, Vector3(0, 1, 0))
+			lighting.scale = Vector3(scale, scale, scale)
+			lighting.show()
