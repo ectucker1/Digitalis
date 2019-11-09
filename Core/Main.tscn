@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Core/Hands.gd" type="Script" id=1]
 [ext_resource path="res://addons/gdleapmotion/scenes/Leap_Motion.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Core/Spells/FireballSpawn.gd" type="Script" id=3]
-[ext_resource path="res://Interface Root.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Core/Spells/TrailController.gd" type="Script" id=4]
+[ext_resource path="res://Interface Root.tscn" type="PackedScene" id=5]
 
 [node name="Spatial" type="Spatial"]
 
@@ -22,4 +23,7 @@ keep_last_hand = false
 [node name="FireballSpawn" type="Spatial" parent="."]
 script = ExtResource( 3 )
 
-[node name="GUI" parent="." instance=ExtResource( 4 )]
+[node name="TrailController" type="Spatial" parent="."]
+script = ExtResource( 4 )
+
+[node name="GUI" parent="." instance=ExtResource( 5 )]
