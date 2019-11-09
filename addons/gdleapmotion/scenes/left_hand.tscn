@@ -66,7 +66,6 @@ mesh = SubResource( 3 )
 material/0 = null
 
 [node name="Index" type="MeshInstance" parent="."]
-editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0536953, 0, -0.000880256 )
 mesh = SubResource( 2 )
 material/0 = null
@@ -112,7 +111,6 @@ mesh = SubResource( 3 )
 material/0 = null
 
 [node name="Middle" type="MeshInstance" parent="."]
-editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00493249, 0, -0.00230861 )
 mesh = SubResource( 2 )
 material/0 = null

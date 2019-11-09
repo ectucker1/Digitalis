@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Core/Spells/Fireball.gd" type="Script" id=1]
 [ext_resource path="res://Resources/fire_01.png" type="Texture" id=2]
@@ -71,6 +71,8 @@ scale = 1.5
 scale_random = 0.5
 color_ramp = SubResource( 10 )
 
+[sub_resource type="SphereMesh" id=12]
+
 [node name="Spatial" type="Spatial"]
 script = ExtResource( 1 )
 
@@ -91,3 +93,15 @@ draw_pass_1 = SubResource( 7 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
+autoplay = true
+
+<<<<<<< Updated upstream
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+autoplay = true
+=======
+[node name="MeshInstance" type="MeshInstance" parent="."]
+visible = false
+mesh = SubResource( 12 )
+material/0 = null
+>>>>>>> Stashed changes
