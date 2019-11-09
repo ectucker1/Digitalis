@@ -7,7 +7,7 @@ var lighting
 
 func _ready():
 	hands = get_parent().get_node("Hands")
-	console = get_parent().find_node("Peephole", true, false)
+	console = get_parent().find_node("Console", true, false)
 	lighting = get_node("Effect")
 	crackle = get_parent().get_node("Crackle")
 
