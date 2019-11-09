@@ -1,0 +1,53 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Label.gd" type="Script" id=1]
+
+[node name="Interface Root" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="GUI" type="MarginContainer" parent="."]
+margin_right = 245.0
+margin_bottom = 600.0
+size_flags_stretch_ratio = 6.17
+custom_constants/margin_right = 20
+custom_constants/margin_top = 20
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="GUI"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 225.0
+margin_bottom = 580.0
+grow_horizontal = 2
+size_flags_stretch_ratio = 3.59
+
+[node name="Bars" type="VBoxContainer" parent="GUI/HBoxContainer"]
+margin_bottom = 560.0
+
+[node name="Counters" type="HBoxContainer" parent="GUI/HBoxContainer"]
+margin_left = 4.0
+margin_right = 4.0
+margin_bottom = 560.0
+
+[node name="HSlider" type="HSlider" parent="GUI/HBoxContainer"]
+margin_left = 8.0
+margin_right = 205.0
+margin_bottom = 16.0
+size_flags_horizontal = 3
+max_value = 200.0
+page = 1.0
+tick_count = 200
+ticks_on_borders = true
+
+[node name="Label" type="Label" parent="GUI"]
+editor/display_folded = true
+margin_left = 20.0
+margin_top = 293.0
+margin_right = 225.0
+margin_bottom = 307.0
+valign = 2
+autowrap = true
+uppercase = true
+script = ExtResource( 1 )
