@@ -26,6 +26,7 @@ bottom_radius = 0.005
 height = 1.0
 
 [node name="Right_hand" type="MeshInstance"]
+editor/display_folded = true
 mesh = SubResource( 1 )
 material/0 = null
 script = ExtResource( 2 )
@@ -207,7 +208,6 @@ mesh = SubResource( 3 )
 material/0 = null
 
 [node name="Pink" type="MeshInstance" parent="."]
-editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.117382, 0, 1.98185e-005 )
 mesh = SubResource( 2 )
 material/0 = null

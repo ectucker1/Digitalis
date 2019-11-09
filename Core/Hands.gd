@@ -1,5 +1,7 @@
 extends Spatial
 
+var SPARKLE_SCENE = preload("res://Core/Spells/Sparkle.tscn")
+
 var hands
 
 # Called when the node enters the scene tree for the first time.
@@ -9,10 +11,25 @@ func _ready():
 	$Leap_Motion.connect("about_to_remove_hand", self, "_remove_hand")
 
 func _new_hand(hand):
+	var index = hand.find_node("Index_Distal", true, false)
+	var sparkle = SPARKLE_SCENE.instance()
+	index.add_child(sparkle)
+	sparkle.global_transform.origin = index.global_transform.origin
 	hands.append(hand)
 
 func _remove_hand(hand):
 	hands.erase(hand)
+
+func get_nodes(name):
+	var nodes = []
+	for hand in hands:
+		var node
+		if name.empty():
+			node = hand
+		else:
+			node = hand.find_node(name, true, false)
+		nodes.append(node)
+	return nodes
 
 func get_positions(name):
 	var positions = []
