@@ -38,7 +38,6 @@ margin_right = 4.0
 margin_bottom = 560.0
 
 [node name="X Slider" type="HSlider" parent="GUI/HBoxContainer"]
-editor/display_folded = true
 margin_left = 8.0
 margin_right = 71.0
 margin_bottom = 16.0
