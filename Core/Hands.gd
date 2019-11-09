@@ -26,7 +26,19 @@ func get_positions(name):
 		positions.append(pos)
 	return positions
 
-func get_euler(name):
+func get_transforms(name):
+	var transforms = []
+	for hand in hands:
+		var node
+		if name.empty():
+			node = hand
+		else:
+			node = hand.find_node(name, true, false)
+		var transform = node.get_global_transform()
+		transforms.append(transform)
+	return transforms
+
+func get_eulers(name):
 	var angles = []
 	for hand in hands:
 		var node
