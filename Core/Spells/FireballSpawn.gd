@@ -22,9 +22,8 @@ func _process(delta):
 		if transform.basis.z.z > -1.1:
 			if countdown < 0:
 				var fireball = FIREBALL_SCENE.instance()
-				fireball.global_transform = transform
-				fireball.global_transform.origin = transform.origin
 				add_child(fireball)
+				fireball.global_transform = transform
 				fired = true
 	
 	if fired:

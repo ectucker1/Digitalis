@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Resources/spark_06.png" type="Texture" id=1]
 
@@ -26,7 +26,16 @@ color_ramp = SubResource( 3 )
 
 [sub_resource type="QuadMesh" id=5]
 
-[sub_resource type="SphereMesh" id=6]
+[sub_resource type="SpatialMaterial" id=6]
+flags_transparent = true
+flags_unshaded = true
+vertex_color_use_as_albedo = true
+params_blend_mode = 1
+albedo_texture = ExtResource( 1 )
+uv1_scale = Vector3( -1, 1, 1 )
+uv2_scale = Vector3( -1, 1, 1 )
+
+[sub_resource type="SphereMesh" id=7]
 radius = 0.5
 height = 1.0
 
@@ -35,10 +44,18 @@ height = 1.0
 [node name="Particles" type="Particles" parent="."]
 transform = Transform( 1.91069e-015, -4.37114e-008, 1, -1, -4.37114e-008, 0, 4.37114e-008, -1, -4.37114e-008, 0, 0, -0.5 )
 material_override = SubResource( 1 )
+amount = 4
+process_material = SubResource( 4 )
+draw_pass_1 = SubResource( 5 )
+
+[node name="Particles2" type="Particles" parent="."]
+transform = Transform( 1.91069e-015, -4.37114e-008, 1, -1, -4.37114e-008, 0, 4.37114e-008, -1, -4.37114e-008, 0, 0, -0.5 )
+material_override = SubResource( 6 )
+amount = 4
 process_material = SubResource( 4 )
 draw_pass_1 = SubResource( 5 )
 
 [node name="MeshInstance" type="MeshInstance" parent="."]
 visible = false
-mesh = SubResource( 6 )
+mesh = SubResource( 7 )
 material/0 = null
