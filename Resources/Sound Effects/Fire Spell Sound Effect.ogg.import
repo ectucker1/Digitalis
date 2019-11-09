@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Fire Spell Sound Effect.ogg-cdf4bc68f9199929f011f9fb4be937f9.oggstr"
+
+[deps]
+
+source_file="res://Resources/Sound Effects/Fire Spell Sound Effect.ogg"
+dest_files=[ "res://.import/Fire Spell Sound Effect.ogg-cdf4bc68f9199929f011f9fb4be937f9.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

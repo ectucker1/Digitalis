@@ -1,8 +1,9 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Core/Spells/Fireball.gd" type="Script" id=1]
 [ext_resource path="res://Resources/fire_01.png" type="Texture" id=2]
 [ext_resource path="res://Resources/smoke_04.png" type="Texture" id=3]
+[ext_resource path="res://Resources/Sound Effects/Fire Spell Sound Effect.ogg" type="AudioStream" id=4]
 
 [sub_resource type="SpatialMaterial" id=1]
 flags_unshaded = true
@@ -14,12 +15,12 @@ particles_anim_v_frames = 1
 particles_anim_loop = false
 albedo_texture = ExtResource( 2 )
 
-[sub_resource type="Gradient" id=6]
+[sub_resource type="Gradient" id=2]
 offsets = PoolRealArray( 0, 0.994286 )
 colors = PoolColorArray( 0.623529, 0.639216, 0.521569, 1, 0.92549, 0.113725, 0.113725, 1 )
 
-[sub_resource type="GradientTexture" id=7]
-gradient = SubResource( 6 )
+[sub_resource type="GradientTexture" id=3]
+gradient = SubResource( 2 )
 
 [sub_resource type="Curve" id=4]
 _data = [ Vector2( 0, 0.3724 ), 0.0, 0.0, 0, 0, Vector2( 0.210224, 0.9408 ), 0.0, 0.0, 0, 0, Vector2( 0.537695, 0.9408 ), 0.0, 0.0, 0, 0, Vector2( 0.99474, 0.345333 ), 0.0, 0.0, 0, 0 ]
@@ -27,7 +28,7 @@ _data = [ Vector2( 0, 0.3724 ), 0.0, 0.0, 0, 0, Vector2( 0.210224, 0.9408 ), 0.0
 [sub_resource type="CurveTexture" id=5]
 curve = SubResource( 4 )
 
-[sub_resource type="ParticlesMaterial" id=2]
+[sub_resource type="ParticlesMaterial" id=6]
 emission_shape = 1
 emission_sphere_radius = 0.02
 gravity = Vector3( 0, 0, 0 )
@@ -37,9 +38,9 @@ linear_accel = 4.0
 angle_random = 1.0
 scale = 3.0
 scale_curve = SubResource( 5 )
-color_ramp = SubResource( 7 )
+color_ramp = SubResource( 3 )
 
-[sub_resource type="QuadMesh" id=3]
+[sub_resource type="QuadMesh" id=7]
 
 [sub_resource type="SpatialMaterial" id=8]
 flags_transparent = true
@@ -52,13 +53,13 @@ particles_anim_v_frames = 1
 particles_anim_loop = false
 albedo_texture = ExtResource( 3 )
 
-[sub_resource type="Gradient" id=10]
+[sub_resource type="Gradient" id=9]
 colors = PoolColorArray( 0, 0, 0, 1, 0.301961, 0.27451, 0.27451, 0 )
 
-[sub_resource type="GradientTexture" id=11]
-gradient = SubResource( 10 )
+[sub_resource type="GradientTexture" id=10]
+gradient = SubResource( 9 )
 
-[sub_resource type="ParticlesMaterial" id=9]
+[sub_resource type="ParticlesMaterial" id=11]
 emission_shape = 1
 emission_sphere_radius = 0.02
 gravity = Vector3( 0, 0, 0 )
@@ -68,7 +69,7 @@ linear_accel = 4.0
 angle_random = 1.0
 scale = 1.5
 scale_random = 0.5
-color_ramp = SubResource( 11 )
+color_ramp = SubResource( 10 )
 
 [node name="Spatial" type="Spatial"]
 script = ExtResource( 1 )
@@ -77,13 +78,17 @@ script = ExtResource( 1 )
 transform = Transform( 1, 0, 0, 0, 0.0163262, 0.999867, 0, -0.999867, 0.0163262, 0, 0, 0 )
 material_override = SubResource( 1 )
 amount = 16
-process_material = SubResource( 2 )
-draw_pass_1 = SubResource( 3 )
+process_material = SubResource( 6 )
+draw_pass_1 = SubResource( 7 )
 
 [node name="Smoke" type="Particles" parent="."]
 transform = Transform( 1, 0, 0, 0, -4.37114e-008, 1, 0, -1, -4.37114e-008, 0, 0, 0 )
 material_override = SubResource( 8 )
 amount = 16
 lifetime = 2.0
-process_material = SubResource( 9 )
-draw_pass_1 = SubResource( 3 )
+process_material = SubResource( 11 )
+draw_pass_1 = SubResource( 7 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+autoplay = true

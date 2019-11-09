@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Electric Crackle.ogg-73aebf63d3186a7ec393b9e1e94a2dcb.oggstr"
+
+[deps]
+
+source_file="res://Resources/Sound Effects/Electric Crackle.ogg"
+dest_files=[ "res://.import/Electric Crackle.ogg-73aebf63d3186a7ec393b9e1e94a2dcb.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

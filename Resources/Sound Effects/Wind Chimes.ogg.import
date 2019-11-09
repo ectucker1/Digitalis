@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Wind Chimes.ogg-c4826403b4ac051d5e66fdf22c200a03.oggstr"
+
+[deps]
+
+source_file="res://Resources/Sound Effects/Wind Chimes.ogg"
+dest_files=[ "res://.import/Wind Chimes.ogg-c4826403b4ac051d5e66fdf22c200a03.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
