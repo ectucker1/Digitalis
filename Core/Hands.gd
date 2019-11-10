@@ -1,6 +1,7 @@
 extends Spatial
 
 var SPARKLE_SCENE = preload("res://Core/Spells/Sparkle.tscn")
+var SPELL_STATUS_SCENE = preload("res://Core/SpellStatus.tscn")
 
 var hands
 
@@ -12,13 +13,28 @@ func _ready():
 
 func _new_hand(hand):
 	var index = hand.find_node("Index_Distal", true, false)
+	
 	var sparkle = SPARKLE_SCENE.instance()
 	index.add_child(sparkle)
 	sparkle.global_transform.origin = index.global_transform.origin
+	
+	var status = SPELL_STATUS_SCENE.instance()
+	hand.add_child(status)
+	
 	hands.append(hand)
 
 func _remove_hand(hand):
 	hands.erase(hand)
+
+func num_hands():
+	return hands.size()
+
+func get_status(i):
+	print(hands[i].get_children())
+	return hands[i].find_node("Status", true, false)
+
+func get_node_status(node):
+	return node.find_node("Status", true, false)
 
 func get_nodes(name):
 	var nodes = []

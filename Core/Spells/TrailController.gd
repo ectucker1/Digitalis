@@ -1,5 +1,7 @@
 extends Spatial
 
+const SPARK_SPELL = 1
+
 var console
 var hands
 var chimes
@@ -19,14 +21,20 @@ func _process(delta):
 	
 	var sparkle = false
 	for i in range(0, indexes.size()):
-		var index = indexes[i]
-		var average_other = (middles[i] + rings[i] + pinkys[i]) / 3.0
-		if index.distance_to(average_other) > 0.15:
-			particles[i].set_emitting(true)
-			sparkle = true
+		var status = hands.get_node_status(particles[i].get_node("../../../../../../../"))
+		if status.current_spell == 0 or status.current_spell == SPARK_SPELL:
+			var index = indexes[i]
+			var average_other = (middles[i] + rings[i] + pinkys[i]) / 3.0
+			if index.distance_to(average_other) > 0.15:
+				particles[i].set_emitting(true)
+				sparkle = true
+				status.current_spell = SPARK_SPELL
+			else:
+				particles[i].set_emitting(false)
+				status.current_spell = 0
 		else:
 			particles[i].set_emitting(false)
-			
+	
 	if sparkle && !chimes.playing:
 		chimes.play()
 	elif !sparkle:
