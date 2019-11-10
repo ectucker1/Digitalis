@@ -30,7 +30,6 @@ func num_hands():
 	return hands.size()
 
 func get_status(i):
-	print(hands[i].get_children())
 	return hands[i].find_node("Status", true, false)
 
 func get_node_status(node):

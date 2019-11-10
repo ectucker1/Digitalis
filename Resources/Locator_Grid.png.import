@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/spark_06.png-b96665a7af80394976290cfd70c1abd3.s3tc.stex"
-path.etc2="res://.import/spark_06.png-b96665a7af80394976290cfd70c1abd3.etc2.stex"
+path.s3tc="res://.import/Locator_Grid.png-e805ea4dd5007b504ad6d54d4fac4468.s3tc.stex"
+path.etc2="res://.import/Locator_Grid.png-e805ea4dd5007b504ad6d54d4fac4468.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Resources/spark_06.png"
-dest_files=[ "res://.import/spark_06.png-b96665a7af80394976290cfd70c1abd3.s3tc.stex", "res://.import/spark_06.png-b96665a7af80394976290cfd70c1abd3.etc2.stex" ]
+source_file="res://Resources/Locator_Grid.png"
+dest_files=[ "res://.import/Locator_Grid.png-e805ea4dd5007b504ad6d54d4fac4468.s3tc.stex", "res://.import/Locator_Grid.png-e805ea4dd5007b504ad6d54d4fac4468.etc2.stex" ]
 
 [params]
 
@@ -22,8 +22,8 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=true
-flags/filter=true
-flags/mipmaps=true
+flags/filter=false
+flags/mipmaps=false
 flags/anisotropic=true
 flags/srgb=1
 process/fix_alpha_border=true
