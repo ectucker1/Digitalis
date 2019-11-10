@@ -20,8 +20,9 @@ func _process(delta):
 	var fired = false
 	for i in range(hands.num_hands()):
 		var current_spell = hands.get_status(i).current_spell
-		if current_spell == FIREBALL_SPELL or current_spell == 0: 
-			if hands.get_transforms("Index_Metacarpal")[i].basis.z.z > -1.1:
+		if current_spell == FIREBALL_SPELL or current_spell == 0:
+			var transform = hands.get_transforms("Index_Metacarpal")[i]
+			if transform.basis.z.z > -1.1:
 				if countdown < 0:
 					var fireball = FIREBALL_SCENE.instance()
 					add_child(fireball)
